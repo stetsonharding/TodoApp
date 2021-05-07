@@ -1,0 +1,31 @@
+/* //container */
+.addTodo{
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: inherit;
+    position: relative;
+}
+
+.todo-input-container{
+    display: flex;
+    position: absolute;
+    padding: 1em;
+    flex-direction: column;
+    right: 150px;
+}
+
+.todo-input{
+    padding: .5em;
+    width: 250px;
+    margin: .2em
+}
+
+.add-task-button{
+    margin: 1.4em;
+    padding: .5em;
+}
+
+.delete-button{
+padding: .5em
+}
+
