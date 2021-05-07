@@ -1,31 +1,38 @@
-/* //container */
-.addTodo{
-    justify-content: flex-start;
-    align-items: flex-end;
-    height: inherit;
-    position: relative;
-}
-
-.todo-input-container{
+.addTodo__container{
     display: flex;
-    position: absolute;
-    padding: 1em;
+    justify-content: center;
     flex-direction: column;
-    right: 150px;
+    margin-right: 2em; 
 }
 
-.todo-input{
+.add-Todo__inputWrapper{
+    display: flex;
+    flex-direction: row;
+    margin: .3em;
+}
+
+
+.add-Todo__input{
+    margin-right: .2em;
     padding: .5em;
-    width: 250px;
-    margin: .2em
 }
 
-.add-task-button{
-    margin: 1.4em;
-    padding: .5em;
+.add-Todo__taskBtn{
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: .5em;
 }
 
-.delete-button{
-padding: .5em
+.add-Todo__deleteBtn{
+  padding: .5em .7em;
 }
 
+@media (max-width: 700px){
+    .add-Todo__inputWrapper{
+      margin: 0 auto;
+    }
+
+    
+}

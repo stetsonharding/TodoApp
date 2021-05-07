@@ -1,10 +1,8 @@
-import React, {useState} from "react"
+import React from "react"
 import "./addTodo.css"
 
 export default function AddTodo({inputListTodo, setInputListTodo}){
-    // const [inputListTodo, setInputListTodo] = useState([{todo: ""}])
-   
-
+  
     const handleInputChange = (e, i) =>{
         const {name, value} = e.target
         const list = [...inputListTodo]
@@ -23,32 +21,27 @@ export default function AddTodo({inputListTodo, setInputListTodo}){
     }
 
     return(
-        <div className="addTodo container">
-            <div className="todo-input-container">
+        <div className="addTodo__container">
+            {/* <div className="addTodo-input-container"> */}
                 {inputListTodo.map((item, i) =>{
                   return( 
-                  <div>
+                <div className="add-Todo__inputWrapper">
                   <input
+                    className="add-Todo__input"
                     key={i}
                     name="todo"
-                    className="todo-input"
                     type="text"
                     placeholder="ADD TODO"
                     value={item.todo}
                     onChange={(e) =>handleInputChange(e, i)}
                     />
-                      <button className="delete-button" onClick={() =>handleRemoveInput(i)}>delete</button>
-                    </div>
+                      <button className="add-Todo__deleteBtn" onClick={() =>handleRemoveInput(i)}>delete</button>
+                </div>
                   
                 )})}
-              
-               
-                   
-           
-            
-            </div>
-           <div>
-            <button className="add-task-button" onClick={handleAddClick}>New Task</button>
+            {/* </div> */}
+           <div className="add-Todo__taskButtonContainer">  
+            <button className="add-Todo__taskBtn" onClick={handleAddClick}>New Task</button>
             </div>
         </div>
     )

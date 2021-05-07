@@ -4,13 +4,11 @@ import AddTodo from "./components/addTodo/addTodo"
 import "./app.css"
 
 export default function App(){
-    const [inputListTodo, setInputListTodo] = useState([{todo: ""}])
+   
     return(
         <>
-        <container className="app-container">
+        <container>
             <Header />
-            <AddTodo inputListTodo={inputListTodo} setInputListTodo={setInputListTodo} />
-        
         </container>
         </>
     )
