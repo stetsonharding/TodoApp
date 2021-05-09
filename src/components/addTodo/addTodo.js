@@ -25,10 +25,9 @@ export default function AddTodo({inputListTodo, setInputListTodo}){
             {/* <div className="addTodo-input-container"> */}
                 {inputListTodo.map((item, i) =>{
                   return( 
-                <div className="add-Todo__inputWrapper">
+                <div className="add-Todo__inputWrapper" key={i}>
                   <input
                     className="add-Todo__input"
-                    key={i}
                     name="todo"
                     type="text"
                     placeholder="ADD TODO"
