@@ -1,47 +1,37 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import "./addTodo.css"
 
-export default function AddTodo({inputListTodo, setInputListTodo}){
+export default function AddTodo(){
+    const [inputTodo, setInputTodo] = useState("")
+    const [todoList, setTodoList] = useState([])
   
-    const handleInputChange = (e, i) =>{
-        const {name, value} = e.target
-        const list = [...inputListTodo]
-        list[i][name] = value
-        setInputListTodo(list)
-    }
+ 
+  useEffect(() =>{
+   console.log(todoList)
+   setInputTodo("")
+  }, [todoList])
 
-    const handleAddClick = () =>{
-        setInputListTodo([...inputListTodo, {todo: ""}])
-    }
+    function handleSubmit(){
+        setTodoList(prevTodo => [...prevTodo, inputTodo])
 
-    const handleRemoveInput = (i) =>{
-        const list = [...inputListTodo]
-        list.splice(i, 1)
-        setInputListTodo(list)
+      console.log(inputTodo)
     }
 
     return(
-        <div className="addTodo__container">
-            {/* <div className="addTodo-input-container"> */}
-                {inputListTodo.map((item, i) =>{
-                  return( 
-                <div className="add-Todo__inputWrapper">
-                  <input
-                    className="add-Todo__input"
-                    key={i}
-                    name="todo"
-                    type="text"
-                    placeholder="ADD TODO"
-                    value={item.todo}
-                    onChange={(e) =>handleInputChange(e, i)}
-                    />
-                      <button className="add-Todo__deleteBtn" onClick={() =>handleRemoveInput(i)}>delete</button>
-                </div>
-                  
-                )})}
-            {/* </div> */}
-           <div className="add-Todo__taskButtonContainer">  
-            <button className="add-Todo__taskBtn" onClick={handleAddClick}>New Task</button>
+        <div className="add-Todo__container">
+            <div className="add-Todo__inputWrapper">
+                <input
+                  className="add-Todo__input"
+                  name="todo"
+                  type="text"
+                  placeholder="ADD TODO"
+                  value={inputTodo}
+                  onChange={(e) => setInputTodo(e.target.value)}
+                />
+            </div>
+
+            <div className="add-Todo__taskButtonContainer">  
+                <button className="add-Todo__taskBtn" onClick={handleSubmit}>New Task</button>
             </div>
         </div>
     )
