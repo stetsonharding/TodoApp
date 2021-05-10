@@ -15,12 +15,13 @@
 .add-Todo__input{
     margin-right: .2em;
     padding: .5em;
+   
 }
 
 .add-Todo__taskBtn{
     margin: 0 auto;
     display: block;
-    width: 50%;
+    width: fit-content;
     margin-top: 10px;
     margin-bottom: .5em;
 }
