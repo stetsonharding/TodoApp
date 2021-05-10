@@ -16,6 +16,7 @@ export default function AddTodo({todoList, setTodoList}){
     }
     
     return(
+<<<<<<< HEAD
       <div className="add-Todo__container">
             {isInputDisplayed ?
             <>
@@ -32,6 +33,28 @@ export default function AddTodo({todoList, setTodoList}){
 
             <div className="add-Todo__taskButtonContainer">  
             <button className="add-Todo__taskBtn" onClick={handleSubmit}>Submit</button>
+=======
+        <div className="addTodo__container">
+            {/* <div className="addTodo-input-container"> */}
+                {inputListTodo.map((item, i) =>{
+                  return( 
+                <div className="add-Todo__inputWrapper" key={i}>
+                  <input
+                    className="add-Todo__input"
+                    name="todo"
+                    type="text"
+                    placeholder="ADD TODO"
+                    value={item.todo}
+                    onChange={(e) =>handleInputChange(e, i)}
+                    />
+                      <button className="add-Todo__deleteBtn" onClick={() =>handleRemoveInput(i)}>delete</button>
+                </div>
+                  
+                )})}
+            {/* </div> */}
+           <div className="add-Todo__taskButtonContainer">  
+            <button className="add-Todo__taskBtn" onClick={handleAddClick}>New Task</button>
+>>>>>>> 2a5ac67695166e95b38da66e295f2b6f74b2b368
             </div>
             </>
             : 
