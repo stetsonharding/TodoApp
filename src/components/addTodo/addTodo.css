@@ -13,7 +13,7 @@
 
 
 .add-Todo__input{
-    margin-right: .2em;
+    margin-right: 3em;
     padding: .5em;
    
 }
@@ -24,7 +24,15 @@
     width: fit-content;
     margin-top: 10px;
     margin-bottom: .5em;
+    cursor: pointer;
+    padding: .6em 3em;
+    margin-right: 3.6em;
+    border: 2px solid #66f3ed;
+    color: black;
+   
 }
+
+
 
 .add-Todo__deleteBtn{
   padding: .5em .7em;

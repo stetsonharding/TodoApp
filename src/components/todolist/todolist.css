@@ -1,3 +1,26 @@
-.Todo-List__Container{
-    background-color: blue;
+.todo-List__Container{
+    background-color: #464646;
+    max-width: 450px; 
+    height: 500px;
+    overflow: auto;
+    border-radius: 10px;
+    
+}
+
+.todo-List__title{
+    text-align: center;
+    letter-spacing: 1px;
+    color: #66f3ed;;
+    font-weight: bold;
+}
+
+.todo-list__item{
+    padding-left: .5em;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: ease-in .2s;
+}
+.todo-list__item:hover{
+    color: turquoise
 }

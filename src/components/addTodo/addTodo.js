@@ -4,17 +4,22 @@ import "./addTodo.css"
 export default function AddTodo({todoList, setTodoList}){
     const [inputTodo, setInputTodo] = useState("")
     const [isInputDisplayed, setIsInputDisplayed] = useState(false)
+    
   
+
+
   useEffect(() =>{
    console.log(todoList)
    setInputTodo("")
   }, [todoList])
 
-    function handleSubmit(){
+    function handleAddTask(){
         setTodoList(prevTodo => [...prevTodo, inputTodo])
       console.log(inputTodo)
     }
-    
+
+  
+
     return(
 
       <div className="add-Todo__container">
@@ -32,7 +37,7 @@ export default function AddTodo({todoList, setTodoList}){
             </div>
 
             <div className="add-Todo__taskButtonContainer">  
-            <button className="add-Todo__taskBtn" onClick={handleSubmit}>Submit</button>
+            <button className="add-Todo__taskBtn" disabled={!inputTodo} onClick={handleAddTask}>{isInputDisplayed ? "Submit Task" : "Add Task"}</button>
             </div>
             </>
             : 

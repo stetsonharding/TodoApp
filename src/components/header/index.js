@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Logo from "../../assets/todoLogo.png"
 import AddTodo from "../addTodo/addTodo"
 import "./header.css"
 
-export default function Header(){
-    const [todoList, setTodoList] = useState([])
+export default function Header({todoList, setTodoList}){
 return(
     <div className="header__container">
         <div className="header__logoContainer">

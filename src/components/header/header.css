@@ -1,7 +1,8 @@
 .header__container{
     display: flex;
     justify-content: space-between;
-    background-color: #6fc4d9;
+    background-color: #43d6d1;
+    height: 25vh;
 }
 
 .header__logo{
