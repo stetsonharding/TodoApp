@@ -7,13 +7,15 @@ export default function TodoList({ todoList, setTodoList }) {
     console.log("started tasks");
   };
 
-  const handleDeleteTask = (index) =>{
-    
-        if(todoList.indexOf(index) !== index){
-          console.log("hello")
-        }
-      
-  }
+  const handleDeleteTask = (index) => {
+    for (const [i, todo] of todoList.entries()) {
+      if (i === index) {
+        const deletedIndex = todoList.splice(i, 1);
+
+        setTodoList([...todoList]);
+      }
+    }
+  };
 
   return (
     <div className="todo-list__Container">
@@ -26,15 +28,18 @@ export default function TodoList({ todoList, setTodoList }) {
                 <label className="todo-list__label">
                   {todo}
                   <input type="checkbox" />
-                  <input type="button" value="delete" onClick={() => handleDeleteTask(index)}/>
+                  <input
+                    type="button"
+                    value="delete"
+                    onClick={() => handleDeleteTask(index)}
+                  />
                 </label>
               </li>
-              {/* <button className="todo-list__deleteBtn" onClick={handleDeleteTask(i)}>Delete</button> */}
             </div>
           );
         })}
       </ol>
-      )
+
       {todoList.length > 0 ? (
         <div className="todo-list__startBtnContainer">
           <button className="todo-list__startBtn" onClick={handleStartTasks}>
