@@ -1,47 +1,39 @@
-.add-Todo__container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-right: 2em; 
+.add-Todo__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 2em;
+  height: inherit;
 }
 
-.add-Todo__inputWrapper{
-    display: flex;
-    flex-direction: row;
-    margin: .3em;
+.add-Todo__inputWrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 0.3em;
 }
 
-
-.add-Todo__input{
-    margin-right: 3em;
-    padding: .5em;
-   
+.add-Todo__input {
+  padding: 0.8em;
+  width: 200px;
 }
 
-.add-Todo__taskBtn{
-    margin: 0 auto;
-    display: block;
-    width: fit-content;
-    margin-top: 10px;
-    margin-bottom: .5em;
-    cursor: pointer;
-    padding: .6em 3em;
-    margin-right: 3.6em;
-    border: 2px solid #66f3ed;
-    color: black;
-   
+/* buttons */
+.add-Todo__taskBtn {
+  margin: 0 auto;
+  display: block;
+  width: fit-content;
+  margin-top: 10px;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  padding: 0.6em 3em;
+  border: 2px solid #66f3ed;
+  color: black;
 }
 
-
-
-.add-Todo__deleteBtn{
-  padding: .5em .7em;
+.add-Todo__deleteBtn {
+  padding: 0.5em 0.7em;
 }
 
-@media (max-width: 700px){
-    .add-Todo__inputWrapper{
-      margin: 0 auto;
-    }
-
-    
+@media (max-width: 700px) {
+  
 }
