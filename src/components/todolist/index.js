@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./todolist.css";
 
 export default function TodoList({ todoList, setTodoList }) {
+  const [checkboxChecked, setCheckboxChecked] = useState([]);
+
   const handleStartTasks = () => {
     console.log("started tasks");
   };
 
   const handleDeleteTask = (index) => {
-    for (const [i, todo] of todoList.entries()) {
+    todoList.forEach((task, i) => {
       if (i === index) {
-        const deletedIndex = todoList.splice(i, 1);
-
+        todoList.splice(i, 1);
         setTodoList([...todoList]);
       }
+    });
+  };
+
+  const handleInputChange = (e) => {
+    const target = e.target;
+    let value = e.target.value;
+
+    if (target.checked) {
+      setCheckboxChecked((prevChecked) => [...prevChecked, value]);
+      console.log(checkboxChecked);
+    } else {
+      console.log("skrt");
     }
   };
 
@@ -26,20 +39,37 @@ export default function TodoList({ todoList, setTodoList }) {
             <div key={index} className="todo-list__taskContainer">
               <li className="todo-list__listItem">
                 <label className="todo-list__label">
-                  {todo}
-                  <input type="checkbox" />
-                  <input
-                    type="button"
-                    value="delete"
-                    onClick={() => handleDeleteTask(index)}
-                  />
+                  {/* {todo} */}
+                  {/* <input type="checkbox" /> */}
+
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      name="task"
+                      id="inlineCheckboxh1"
+                      value={todo}
+                      onChange={handleInputChange}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="inlineCheckboxh1"
+                    >
+                      {todo}
+                    </label>
+                  </div>
                 </label>
               </li>
+              <input
+                className="todo-list__deleteBtn"
+                type="button"
+                value="X"
+                onClick={() => handleDeleteTask(index)}
+              />
             </div>
           );
         })}
       </ol>
-
       {todoList.length > 0 ? (
         <div className="todo-list__startBtnContainer">
           <button className="todo-list__startBtn" onClick={handleStartTasks}>
