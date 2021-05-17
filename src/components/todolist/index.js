@@ -1,35 +1,31 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import "./todolist.css";
 import SelectTodo from "../selectTodo/index";
 
 export default function TodoList({ todoList, setTodoList }) {
-  // const [checkboxChecked, setCheckboxChecked] = useState([]);
+  const [checkboxChecked, setCheckboxChecked] = useState([]);
+
+ useEffect(() => {
+   console.log(checkboxChecked)
+  }, [checkboxChecked]);
 
   const handleStartTasks = () => {
-    console.log("started tasks");
+    console.log(checkboxChecked)
   };
 
   const handleDeleteTask = (index) => {
     todoList.forEach((task, i) => {
       if (i === index) {
         todoList.splice(i, 1);
+        checkboxChecked.splice(i,1)
         setTodoList([...todoList]);
+        setCheckboxChecked([...checkboxChecked])
       }
     });
   };
 
-  // const handleInputChange = (e) => {
-  //   const target = e.target;
-  //   let value = e.target.value;
 
-  //   if (target.checked) {
-  //     setCheckboxChecked((prevChecked) => [...prevChecked, value]);
-  //     console.log(checkboxChecked);
-  //   } else {
-  //     console.log("skrt");
-  //   }
-  // };
 
   return (
     <div className="todo-list__Container">
@@ -39,27 +35,7 @@ export default function TodoList({ todoList, setTodoList }) {
           return (
             <div key={index} className="todo-list__taskContainer">
               <li className="todo-list__listItem">
-                {/* <label className="todo-list__label">
-             
-
-                  <div className="form-check form-check-inline">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      name="task"
-                      id="inlineCheckboxh1"
-                      value={todo}
-                      onChange={handleInputChange}
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="inlineCheckboxh1"
-                    >
-                      {todo}
-                    </label>
-                  </div>
-                </label> */}
-                <SelectTodo todo={todo} />
+                <SelectTodo todo={todo} checkboxChecked={checkboxChecked} setCheckboxChecked={setCheckboxChecked} />
               </li>
               <input
                 className="todo-list__deleteBtn"

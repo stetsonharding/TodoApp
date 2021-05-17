@@ -1,34 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-export default function SelectTodo({ todo }) {
-  const [checkboxChecked, setCheckboxChecked] = useState([]);
-
-  // const handleInputChange = (e) => {
-  //   const checked = e.target.checked;
-  //   let value = e.target.value;
-
-  //   if (checked) {
-  //     setCheckboxChecked((prevChecked) => [...prevChecked, value]);
-  //     console.log("checkBoxArrray:" + checkboxChecked);
-  //   } else {
-  //     console.log("skrt");
-  //   }
-  // };
+export default function SelectTodo({ todo, checkboxChecked, setCheckboxChecked }) {
+ 
 
   const handleInputChange = (e) => {
     const checked = e.target.checked;
     let value = e.target.value;
 
     if (checked) {
-      setCheckboxChecked((prevChecked) => [...prevChecked, value]);
-    } else {
-      console.log("unchecked");
+      setCheckboxChecked((prevChecked) => [...prevChecked, value])
+    } else if (checked === false) {
+      const array = [...checkboxChecked]
+      const index = array.indexOf(value)
+      array.splice(index, 1)
+      setCheckboxChecked([...array])
     }
   };
-
-  useEffect(() => {
-    console.log("checkBoxArrray:" + checkboxChecked);
-  }, [checkboxChecked]);
 
   return (
     <label className="todo-list__label">

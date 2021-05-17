@@ -6,7 +6,7 @@ export default function AddTodo({ todoList, setTodoList }) {
   const [isInputDisplayed, setIsInputDisplayed] = useState(false);
 
   useEffect(() => {
-    console.log(todoList);
+    // console.log(todoList);
     setInputTodo("");
   }, [todoList]);
 
