@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./todolist.css";
+import SelectTodo from "../selectTodo/index";
 
 export default function TodoList({ todoList, setTodoList }) {
-  const [checkboxChecked, setCheckboxChecked] = useState([]);
+  // const [checkboxChecked, setCheckboxChecked] = useState([]);
 
   const handleStartTasks = () => {
     console.log("started tasks");
@@ -18,17 +19,17 @@ export default function TodoList({ todoList, setTodoList }) {
     });
   };
 
-  const handleInputChange = (e) => {
-    const target = e.target;
-    let value = e.target.value;
+  // const handleInputChange = (e) => {
+  //   const target = e.target;
+  //   let value = e.target.value;
 
-    if (target.checked) {
-      setCheckboxChecked((prevChecked) => [...prevChecked, value]);
-      console.log(checkboxChecked);
-    } else {
-      console.log("skrt");
-    }
-  };
+  //   if (target.checked) {
+  //     setCheckboxChecked((prevChecked) => [...prevChecked, value]);
+  //     console.log(checkboxChecked);
+  //   } else {
+  //     console.log("skrt");
+  //   }
+  // };
 
   return (
     <div className="todo-list__Container">
@@ -38,9 +39,8 @@ export default function TodoList({ todoList, setTodoList }) {
           return (
             <div key={index} className="todo-list__taskContainer">
               <li className="todo-list__listItem">
-                <label className="todo-list__label">
-                  {/* {todo} */}
-                  {/* <input type="checkbox" /> */}
+                {/* <label className="todo-list__label">
+             
 
                   <div className="form-check form-check-inline">
                     <input
@@ -58,7 +58,8 @@ export default function TodoList({ todoList, setTodoList }) {
                       {todo}
                     </label>
                   </div>
-                </label>
+                </label> */}
+                <SelectTodo todo={todo} />
               </li>
               <input
                 className="todo-list__deleteBtn"
