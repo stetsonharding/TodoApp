@@ -1,8 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../../Context"
 import "./addTodo.css";
 
-export default function AddTodo({ todoList, setTodoList }) {
-  const [inputTodo, setInputTodo] = useState("");
+export default function AddTodo() {
+  
+  const {
+    todoList, 
+    setTodoList, 
+    inputTodo, 
+    setInputTodo
+  } = useContext(Context)
   const [isInputDisplayed, setIsInputDisplayed] = useState(false);
 
   useEffect(() => {

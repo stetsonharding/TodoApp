@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useContext}from "react";
+import { Context } from "../../Context"
 
-export default function SelectTodo({ todo, checkboxChecked, setCheckboxChecked }) {
- 
+export default function SelectTodo({todo}) {
+ const {
+   checkboxChecked, 
+   setCheckboxChecked
+  } = useContext(Context)
 
   const handleInputChange = (e) => {
     const checked = e.target.checked;

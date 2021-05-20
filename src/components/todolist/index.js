@@ -1,10 +1,16 @@
-import React, {useState, useEffect} from "react";
+import React, { useEffect, useContext} from "react";
+import SelectTodo from "../selectTodo/index";
+import { Context } from "../../Context"
 
 import "./todolist.css";
-import SelectTodo from "../selectTodo/index";
 
-export default function TodoList({ todoList, setTodoList }) {
-  const [checkboxChecked, setCheckboxChecked] = useState([]);
+export default function TodoList() {
+const {
+  todoList, 
+  setTodoList, 
+  checkboxChecked, 
+  setCheckboxChecked
+} = useContext(Context)
 
  useEffect(() => {
    console.log(checkboxChecked)
@@ -24,8 +30,6 @@ export default function TodoList({ todoList, setTodoList }) {
       }
     });
   };
-
-
 
   return (
     <div className="todo-list__Container">
