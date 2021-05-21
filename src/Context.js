@@ -4,18 +4,22 @@ const Context = React.createContext();
 
 const ContextProvider = ({children}) => {
     const [inputTodo, setInputTodo] = useState("");
-    const [checkboxChecked, setCheckboxChecked] = useState([]);
+    const [todosSelected, setTodosSelected] = useState([]);
     const [todoList, setTodoList] = useState([])
+   
 
 
     return(
         <Context.Provider value={{
         inputTodo, 
         setInputTodo, 
-        checkboxChecked, 
-        setCheckboxChecked, 
+        todosSelected, 
+        setTodosSelected, 
         todoList, 
-        setTodoList}}
+        setTodoList,
+    
+    
+    }}
         >
         {children}
         </Context.Provider>

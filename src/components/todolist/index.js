@@ -8,25 +8,33 @@ export default function TodoList() {
 const {
   todoList, 
   setTodoList, 
-  checkboxChecked, 
-  setCheckboxChecked
+  todosSelected, 
+  setTodosSelected,
+ 
 } = useContext(Context)
 
+
+
  useEffect(() => {
-   console.log(checkboxChecked)
-  }, [checkboxChecked]);
+   console.log(todosSelected)
+  }, [todosSelected]);
+
+  
 
   const handleStartTasks = () => {
-    console.log(checkboxChecked)
+
+    console.log(todosSelected)
   };
+
+
 
   const handleDeleteTask = (index) => {
     todoList.forEach((task, i) => {
       if (i === index) {
         todoList.splice(i, 1);
-        checkboxChecked.splice(i,1)
+        todosSelected.splice(i,1)
         setTodoList([...todoList]);
-        setCheckboxChecked([...checkboxChecked])
+        setTodosSelected([...todosSelected])
       }
     });
   };
@@ -39,7 +47,7 @@ const {
           return (
             <div key={index} className="todo-list__taskContainer">
               <li className="todo-list__listItem">
-                <SelectTodo todo={todo} checkboxChecked={checkboxChecked} setCheckboxChecked={setCheckboxChecked} />
+                <SelectTodo todo={todo} />
               </li>
               <input
                 className="todo-list__deleteBtn"

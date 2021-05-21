@@ -3,21 +3,21 @@ import { Context } from "../../Context"
 
 export default function SelectTodo({todo}) {
  const {
-   checkboxChecked, 
-   setCheckboxChecked
+   todosSelected, 
+   setTodosSelected,
   } = useContext(Context)
 
   const handleInputChange = (e) => {
-    const checked = e.target.checked;
+    const selected = e.target.checked;
     let value = e.target.value;
 
-    if (checked) {
-      setCheckboxChecked((prevChecked) => [...prevChecked, value])
-    } else if (checked === false) {
-      const array = [...checkboxChecked]
+    if (selected) {
+      setTodosSelected((prevSelected) => [...prevSelected, value])
+    } else if (selected === false) {
+      const array = [...todosSelected]
       const index = array.indexOf(value)
       array.splice(index, 1)
-      setCheckboxChecked([...array])
+      setTodosSelected([...array])
     }
   };
 
@@ -28,11 +28,11 @@ export default function SelectTodo({todo}) {
           className="form-check-input"
           type="checkbox"
           name="task"
-          id="inlineCheckboxh1"
+          id="todoCheckbox"
           value={todo}
           onChange={handleInputChange}
         />
-        <label className="form-check-label" htmlFor="inlineCheckboxh1">
+        <label className="form-check-label" htmlFor="todoCheckbox">
           {todo}
         </label>
       </div>
