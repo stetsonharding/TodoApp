@@ -10,7 +10,6 @@ const {
   setTodoList, 
   todosSelected, 
   setTodosSelected,
- 
 } = useContext(Context)
 
 
@@ -32,9 +31,7 @@ const {
     todoList.forEach((task, i) => {
       if (i === index) {
         todoList.splice(i, 1);
-        todosSelected.splice(i,1)
         setTodoList([...todoList]);
-        setTodosSelected([...todosSelected])
       }
     });
   };
@@ -61,9 +58,9 @@ const {
       </ol>
       {todoList.length > 0 ? (
         <div className="todo-list__startBtnContainer">
-          <button className="todo-list__startBtn" onClick={handleStartTasks}>
-            Start Tasks
-          </button>
+          <div>
+            <h2 style={{color: "white"}}>Select task to begin</h2>
+          </div>
         </div>
       ) : null}
     </div>
