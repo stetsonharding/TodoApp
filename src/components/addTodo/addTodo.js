@@ -1,9 +1,35 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Context } from "../../Context";
+import React, { useState} from "react";
 import "./addTodo.css";
+
+import uuid from 'react-uuid'
 
 export default function AddTodo() {
   const [isInputDisplayed, setIsInputDisplayed] = useState(false);
+  const [todo, setTodo] = useState({title: "", id: uuid()})
+  // const [allTodos, setAllTodos] = useState([])
+  
+
+// function handleChange(e){
+//   const {name, value} = e.target
+// setTodo(prevTodo =>({
+//   ...prevTodo,
+//   [name]: value
+// }))
+// }
+
+// console.log(allTodos)
+
+// function handleSubmit(e){
+ 
+//   e.preventDefault();
+//   setAllTodos(prevAllTodos =>[
+//     ...prevAllTodos,
+//     todo
+//   ])
+
+// setTodo({title: "", id:uuid()})
+// }
+// setTodo('')
 
   return (
     <div className="add-Todo__container">
@@ -15,8 +41,8 @@ export default function AddTodo() {
               name="todo"
               type="text"
               placeholder="ADD TODO"
-              value={""}
-              onChange={""}
+              value={todo.title}
+              onChange={ (e) => setTodo({...todo, title: e.target.value})}
             />
           </div>
 
