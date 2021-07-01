@@ -1,16 +1,14 @@
-import React from 'react'
-import Header from "./components/header"
-import Home from "./pages/Home"
+import React from "react";
+import Header from "./components/header";
+import Home from "./pages/Home";
 
-// import TodoList from "./components/todolist"
-import "./app.css"
+import "./app.css";
 
-export default function App(){
-   
-    return (
+export default function App() {
+  return (
     <>
-      <Header /> 
+      <Header />
       <Home />
     </>
-      )
-    }
+  );
+}

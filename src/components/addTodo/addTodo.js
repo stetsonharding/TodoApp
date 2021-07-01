@@ -1,25 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Context } from "../../Context"
+import { Context } from "../../Context";
 import "./addTodo.css";
 
 export default function AddTodo() {
-  
-  const {
-    todoList, 
-    setTodoList, 
-    inputTodo, 
-    setInputTodo
-  } = useContext(Context)
   const [isInputDisplayed, setIsInputDisplayed] = useState(false);
-
-  useEffect(() => {
-    // console.log(todoList);
-    setInputTodo("");
-  }, [todoList]);
-
-  function handleAddTask() {
-    setTodoList((prevTodo) => [...prevTodo, inputTodo]);
-  }
 
   return (
     <div className="add-Todo__container">
@@ -31,17 +15,13 @@ export default function AddTodo() {
               name="todo"
               type="text"
               placeholder="ADD TODO"
-              value={inputTodo}
-              onChange={(e) => setInputTodo(e.target.value)}
+              value={""}
+              onChange={""}
             />
           </div>
 
           <div className="add-Todo__taskButtonContainer">
-            <button
-              className="add-Todo__taskBtn"
-              disabled={!inputTodo}
-              onClick={handleAddTask}
-            >
+            <button className="add-Todo__taskBtn" onClick={""}>
               {isInputDisplayed ? "Submit Task" : "Add Task"}
             </button>
           </div>
