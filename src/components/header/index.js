@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Logo from "../../assets/todoLogo.png"
-import AddTodo from "../addTodo/addTodo"
+import TaskInput from '../taskInput/TaskInput'
 import "./header.css"
 
 
@@ -11,7 +11,7 @@ return(
         <div className="header__logoContainer">
             <img className="header__logo" src={Logo} alt="Logo" />
         </div>
-        <AddTodo/>
+        <TaskInput/>
     </div>
 )
 }

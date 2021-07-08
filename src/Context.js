@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Context = React.createContext();
 
 const ContextProvider = ({ children }) => {
-  return <Context.Provider>{children}</Context.Provider>;
+  const [allTasks, setAllTasks] = useState([])
+  const [startedTasks, setStartedTasks] = useState([])
+  
+
+
+  return <Context.Provider value={{allTasks, setAllTasks, setStartedTasks, startedTasks}}>
+    {children}</Context.Provider>;
 };
 export { ContextProvider, Context };
