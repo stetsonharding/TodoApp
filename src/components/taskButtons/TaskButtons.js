@@ -26,8 +26,7 @@ export default function TaskButtons(props){
     deleteTask(todo.id);
     }
 
-   console.log(startedTasks)
-   console.log(allTasks)
+
 
    //edit
   const editTask = (id) => {
