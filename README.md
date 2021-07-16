@@ -1,1 +1,1 @@
-fully responsive react application to practice manipulating state, using the context API, and creating diffrent components with children. This projects lets you create, start, edit, or delete a task. Once the task is started that task is moved to the "in progress" component,  from there you can check off when your task is completed and the task will move to the "Completed Task" component. This project is currently still being developed, and i will update this file when completed.
+
