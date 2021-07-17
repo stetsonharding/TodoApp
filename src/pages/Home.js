@@ -4,9 +4,8 @@ import TaskProgress from "../components/taskProgress/TaskProgress";
 import Task from "../components/task/Task";
 import StartedTask from "../components/startedTask/StartedTask";
 
-
 export default function Home() {
-  const { allTasks, startedTasks, } = useContext(Context);
+  const { allTasks, startedTasks } = useContext(Context);
 
   const styles = {
     display: "flex",
@@ -17,8 +16,8 @@ export default function Home() {
       <div className="home__Container" style={styles}>
         {allTasks.length > 0 || startedTasks.length > 0 ? (
           <TaskProgress title="Tasks to start" taskNumber={allTasks.length}>
-            {allTasks.map((todo) => (
-              <Task todo={todo} key={todo.id} />
+            {allTasks.map((task) => (
+              <Task task={task} />
             ))}
           </TaskProgress>
         ) : null}
@@ -33,8 +32,6 @@ export default function Home() {
             ))}
           </TaskProgress>
         ) : null}
-
-       
       </div>
     </>
   );

@@ -13,7 +13,6 @@ export default function TaskInput() {
   function addTodo(e) {
     e.preventDefault();
     setAllTasks((prevTask) => [...prevTask, { title: task, id: uuid() }]);
-
     setTask("");
   }
 
@@ -32,7 +31,11 @@ export default function TaskInput() {
           </div>
 
           <div className="add-Todo__taskButtonContainer">
-            <button className="add-Todo__taskBtn" onClick={(e) => addTodo(e)}>
+            <button
+              disabled={task.length > 0 ? false : true}
+              className="add-Todo__taskBtn"
+              onClick={(e) => addTodo(e)}
+            >
               {isInputDisplayed ? "Submit Task" : "Add Task"}
             </button>
           </div>

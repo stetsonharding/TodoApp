@@ -1,43 +1,43 @@
-import React, {useContext} from 'react'
-import {Context} from "../../Context"
+import React, { useContext } from "react";
+import { Context } from "../../Context";
 
+export default function TaskButtons(props) {
+  const { task, setEditedTask, setIsEditInputShown } = props;
 
+  const { allTasks, setAllTasks, setStartedTasks, startedTasks } =
+    useContext(Context);
 
-export default function TaskButtons(props){
-    const {todo, setEditedTask, setIsEditInputShown} = props
+  //delete
+  const deleteTask = (taskItems, id) => {
+    taskItems((prevTask) => prevTask.filter((task) => task.id !== id));
+  };
 
-    const {allTasks, setAllTasks, setStartedTasks, startedTasks} = useContext(Context)
+  //start
+  const startTask = (task) => {
+    setStartedTasks((prevTask) => [...prevTask, task]);
 
-    //delete
-    const deleteTask = (id) => {
-     setAllTasks(allTasks.filter(task => task.id !== id))
-    }
+    deleteTask(setAllTasks, task.id);
+  };
 
-    //start
-    const startTask = (id) => {
-    if(todo.id === id){
-        setStartedTasks(prevTask => [
-            ...prevTask,
-            todo
-        ])
-    }else{
-        setStartedTasks([])
-    }
-    deleteTask(todo.id);
-    }
+  //edit
+  const editTask = () => {
+    setIsEditInputShown((prevTask) => !prevTask);
+  };
 
-
-
-   //edit
-  const editTask = (id) => {
-   setIsEditInputShown(prevTask => !prevTask)
-  }
-
-    return(
+  return (
     <>
-    <button className="task__task-btn" onClick={() => startTask(todo.id)}>Start</button>
-    <button className="task__task-btn" onClick={() => editTask(todo.id)}>Edit</button>
-    <button className="task__task-btn" onClick={() => deleteTask(todo.id)}>X</button> 
+      <button className="task__task-btn" onClick={() => startTask(task)}>
+        Start
+      </button>
+      <button className="task__task-btn" onClick={() => editTask()}>
+        Edit
+      </button>
+      <button
+        className="task__task-btn"
+        onClick={() => deleteTask(setAllTasks, task.id)}
+      >
+        X
+      </button>
     </>
-    )
+  );
 }
