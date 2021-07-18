@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      {/* tasks list */}
+      {/* all tasks */}
       <div className="home__Container" style={styles}>
         {allTasks.length > 0 ||
         startedTasks.length > 0 ||
@@ -26,7 +26,7 @@ export default function Home() {
           </TaskProgress>
         ) : null}
 
-        {/* started tasks */}
+        {/* tasks in progress */}
         {startedTasks.length > 0 || tasksCompleted.length > 0 ? (
           <TaskProgress
             title="Tasks in progress"

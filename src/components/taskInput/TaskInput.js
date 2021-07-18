@@ -10,6 +10,8 @@ export default function TaskInput() {
 
   const { setAllTasks } = useContext(Context);
 
+  //grab all previous tasks, add the new task from input to AllTasks array,
+  //call uuid function to generate a random unique id for each task.
   function addTodo(e) {
     e.preventDefault();
     setAllTasks((prevTask) => [...prevTask, { title: task, id: uuid() }]);
@@ -18,6 +20,7 @@ export default function TaskInput() {
 
   return (
     <div className="add-Todo__container">
+      {/* display input onClick, otherwise display "add task" */}
       {isInputDisplayed ? (
         <>
           <div className="add-Todo__inputWrapper">

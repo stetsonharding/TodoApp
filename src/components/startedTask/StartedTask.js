@@ -1,30 +1,18 @@
 import React, { useContext } from "react";
 import "./StartedTask.css";
 import { Context } from "../../Context";
-// import CompletedTask from "../completedTask/CompletedTask";
 
 export default function StartedTask(props) {
-  const {
-    tasksCompleted,
-    setTasksCompleted,
-    startedTasks,
-    setStartedTasks,
-    DeleteTask,
-  } = useContext(Context);
+  const { setTasksCompleted, setStartedTasks, DeleteTask } =
+    useContext(Context);
 
   const { startedTask } = props;
 
   const CompletedTask = (task) => {
-    //loop through started tasks
-    //filter out the task that != id
-    //delete task thats passed in
-
+    // get all previous tasks, add passed in task to TaskCompleted array
     setTasksCompleted((prevTasks) => [...prevTasks, task]);
 
-    // setCompletedTasks((prevStarted) =>
-    //   prevStarted.filter((task) => task.id !== id)
-    // );
-
+    //delete the task that passed in, from StartedTasks array
     DeleteTask(setStartedTasks, task.id);
   };
 

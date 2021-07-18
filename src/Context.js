@@ -7,13 +7,10 @@ const ContextProvider = ({ children }) => {
   const [startedTasks, setStartedTasks] = useState([]);
   const [tasksCompleted, setTasksCompleted] = useState([]);
 
-  //delete Task
+  //delete spacific tasks from arrays.
   const DeleteTask = (taskItems, id) => {
     taskItems((prevTask) => prevTask.filter((task) => task.id !== id));
   };
-
-  console.log("completed");
-  console.log(tasksCompleted);
 
   return (
     <Context.Provider

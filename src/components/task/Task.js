@@ -1,12 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import EditTask from "../editTask/EditTask";
-// import {Context} from "../../Context"
 import TaskButtons from "../taskButtons/TaskButtons";
 
 import "./Task.css";
 
-export default function Task(props) {
-  const { task } = props;
+export default function Task({ task }) {
   const [editedTask, setEditedTask] = useState(task.title);
   const [isEditInputShown, setIsEditInputShown] = useState(false);
 
@@ -14,6 +12,7 @@ export default function Task(props) {
     <>
       <div className="task__container">
         <div className="task">
+          {/* show edit input if isEditInputShown is true, show task title if false */}
           {isEditInputShown ? (
             <EditTask
               task={task}
@@ -23,10 +22,11 @@ export default function Task(props) {
             />
           ) : (
             <p>
-              <span>Task:</span> {task.title}{" "}
+              <span>Task:</span> {task.title}
             </p>
           )}
         </div>
+        {/* task buttons seperated for logic */}
         <div className="task__buttons-container">
           <TaskButtons
             task={task}
