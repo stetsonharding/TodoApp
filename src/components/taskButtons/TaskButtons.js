@@ -7,7 +7,7 @@ export default function TaskButtons(props) {
   const { allTasks, setAllTasks, setStartedTasks, startedTasks } =
     useContext(Context);
 
-  //delete
+  //delete Task
   const deleteTask = (taskItems, id) => {
     taskItems((prevTask) => prevTask.filter((task) => task.id !== id));
   };
