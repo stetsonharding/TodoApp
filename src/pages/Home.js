@@ -12,8 +12,24 @@ export default function Home() {
     display: "flex",
   };
 
+  const title = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "50vh",
+  };
+
   return (
     <>
+      {/* if all three task progress arrays are less than or equal to zero, display title */}
+      {allTasks.length <= 0 &&
+      startedTasks.length <= 0 &&
+      tasksCompleted <= 0 ? (
+        <div class="home__noTasksTitle" style={title}>
+          <h1>You have 0 tasks created.</h1>
+        </div>
+      ) : null}
+
       {/* all tasks */}
       <div className="home__Container" style={styles}>
         {allTasks.length > 0 ||

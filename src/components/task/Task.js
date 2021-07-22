@@ -21,9 +21,7 @@ export default function Task({ task }) {
               editedTask={editedTask}
             />
           ) : (
-            <p>
-              <span>Task:</span> {task.title}
-            </p>
+            <p>{task.title}</p>
           )}
         </div>
         {/* task buttons seperated for logic */}

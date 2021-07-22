@@ -29,7 +29,7 @@ export default function EditTask(props) {
           value={editedTask}
           onChange={(e) => setEditedTask(e.target.value)}
         />
-        <button>Ok</button>
+        <button>&#10003;</button>
       </form>
     </>
   );

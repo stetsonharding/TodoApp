@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../../Context";
 
+import "./TaskButtons.css";
+
 export default function TaskButtons(props) {
   const { task, setIsEditInputShown } = props;
 

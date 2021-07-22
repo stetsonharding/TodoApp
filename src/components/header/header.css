@@ -3,6 +3,7 @@
   justify-content: space-between;
   background-color: #43d6d1;
   height: 25vh;
+  border-bottom: 1px solid red;
 }
 
 .header__logo {

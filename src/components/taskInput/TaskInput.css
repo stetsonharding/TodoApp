@@ -26,14 +26,18 @@
   margin-bottom: 0.5em;
   cursor: pointer;
   padding: 0.6em 3em;
-  border: 2px solid #66f3ed;
+  border: 1px solid black;
   color: black;
 }
-
-.add-Todo__deleteBtn {
-  padding: 0.5em 0.7em;
+.add-Todo__taskBtn:hover {
+  background-color: rgb(211, 102, 102);
+  transition: 0.3s;
+  color: white;
+  font-weight: bolder;
+}
+.add-Todo__taskBtn:disabled {
+  cursor: not-allowed;
 }
 
 @media (max-width: 700px) {
-  
 }
