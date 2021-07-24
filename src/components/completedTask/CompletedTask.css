@@ -1,0 +1,9 @@
+.completedTask__container {
+  margin: 0 20px;
+}
+
+.completedTask__container h2 {
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 1.5px;
+}

@@ -22,9 +22,9 @@ export default function StartedTask(props) {
         style={{ display: "flex", justifyContent: "space-between" }}
         className="startedTask_ task-container"
       >
-        <h3>{startedTask.title}</h3>
+        <h3 className="startedTask_ title">{startedTask.title}</h3>
         <button
-          className="startedTask_ completed-startedtask-button"
+          className="startedTask_ completed-button"
           onClick={() => CompletedTask(startedTask)}
         >
           Complete

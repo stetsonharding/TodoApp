@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../../Context";
 
+import "./EditTask.css";
+
 export default function EditTask(props) {
   const { task, setEditedTask, editedTask, setIsEditInputShown } = props;
   const { setAllTasks } = useContext(Context);
@@ -25,6 +27,7 @@ export default function EditTask(props) {
     <>
       <form onSubmit={(e) => submitEdit(e, task.id, editedTask)}>
         <input
+          className="editTask_ editInput"
           type="text"
           value={editedTask}
           onChange={(e) => setEditedTask(e.target.value)}

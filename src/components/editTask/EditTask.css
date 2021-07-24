@@ -1,0 +1,16 @@
+.editInput {
+  height: 19px;
+}
+
+form button {
+  margin-left: 1px;
+  width: object-fit;
+  cursor: pointer;
+}
+
+form button:hover {
+  margin-left: 1px;
+  width: object-fit;
+  cursor: pointer;
+  opacity: 0.7;
+}

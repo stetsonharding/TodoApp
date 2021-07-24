@@ -10,6 +10,9 @@ export default function Home() {
 
   const styles = {
     display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "25px",
   };
 
   const title = {

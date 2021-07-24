@@ -1,9 +1,10 @@
 .taskProgress__container {
-  background-color: #43d6d1;
+  /* background-color: #43d6d1; */
+  background-color: #a6c7c5;
   width: 100%;
   max-width: 500px;
   height: 600px;
-  margin: 1em;
+  margin: 25px;
   overflow: auto;
   border-radius: 15px;
   box-shadow: 1px 1px 1px black;
@@ -15,4 +16,24 @@
   letter-spacing: 2px;
   color: black;
   font-family: "Libre Baskerville", serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(245, 240, 240);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(209, 33, 33);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(20, 92, 160);
 }

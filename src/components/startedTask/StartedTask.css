@@ -1,11 +1,32 @@
-.startedTask__task-container{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 25px;
-    align-items: center;
+.task-container {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 25px; */
+  align-items: center;
 }
 
-.startedTask__button{
-    padding:5px 20px;
-    height: fit-content;
+.completed-button {
+  height: 25px;
+  width: fit-content;
+  margin: 0 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ebf3ed;
+  color: black;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.completed-button:hover {
+  background-color: #119432;
+  transition: 0.2s;
+  color: white;
+  font-weight: bold;
+}
+
+.title {
+  padding: 0px 25px;
 }

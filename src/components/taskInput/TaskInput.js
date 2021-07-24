@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { Context } from "../../Context";
 import "./TaskInput.css";
 
@@ -7,14 +7,17 @@ import uuid from "react-uuid";
 export default function TaskInput() {
   const [isInputDisplayed, setIsInputDisplayed] = useState(false);
   const [task, setTask] = useState("");
+  const focusInput = useRef(null);
 
   const { setAllTasks } = useContext(Context);
 
-  //grab all previous tasks, add the new task from input to AllTasks array,
-  //call uuid function to generate a random unique id for each task.
   function addTodo(e) {
     e.preventDefault();
+    //grab all previous tasks, add the new task from input to AllTasks array,
+    //call uuid function to generate a random unique id for each task.
     setAllTasks((prevTask) => [...prevTask, { title: task, id: uuid() }]);
+
+    //reset input
     setTask("");
   }
 

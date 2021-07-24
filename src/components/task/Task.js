@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EditTask from "../editTask/EditTask";
 import TaskButtons from "../taskButtons/TaskButtons";
+import TaskArrow from "../../assets/task-arrow.svg";
 
 import "./Task.css";
 
@@ -21,7 +22,14 @@ export default function Task({ task }) {
               editedTask={editedTask}
             />
           ) : (
-            <p>{task.title}</p>
+            <p>
+              <img
+                src={TaskArrow}
+                alt=""
+                style={{ width: "13px", margin: " 0 5px" }}
+              />
+              {task.title}
+            </p>
           )}
         </div>
         {/* task buttons seperated for logic */}
