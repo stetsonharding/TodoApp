@@ -1,5 +1,4 @@
 .taskProgress__container {
-  /* background-color: #43d6d1; */
   background-color: #a6c7c5;
   width: 100%;
   max-width: 500px;
@@ -20,7 +19,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 4px;
 }
 
 /* Track */
@@ -36,4 +35,30 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(20, 92, 160);
+}
+
+@media (max-width: 1500px) {
+  .taskProgress__title {
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 2px;
+    color: black;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.5em;
+  }
+
+  .taskProgress__container {
+    overflow-x: hidden;
+  }
+
+  .taskProgress__container {
+    background-color: #a6c7c5;
+    width: 100%;
+    max-width: 450px;
+    height: 470px;
+    margin: 25px;
+    overflow-x: hidden;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px black;
+  }
 }

@@ -13,6 +13,7 @@ export default function TaskInput() {
 
   function addTodo(e) {
     e.preventDefault();
+    focusInput.current.focus();
     //grab all previous tasks, add the new task from input to AllTasks array,
     //call uuid function to generate a random unique id for each task.
     setAllTasks((prevTask) => [...prevTask, { title: task, id: uuid() }]);
@@ -28,6 +29,7 @@ export default function TaskInput() {
         <>
           <div className="add-Todo__inputWrapper">
             <input
+              ref={focusInput}
               className="add-Todo__input"
               type="text"
               placeholder="Add Task"
@@ -47,7 +49,7 @@ export default function TaskInput() {
           </div>
         </>
       ) : (
-        <div className="add-Todo__taskButtonContainer">
+        <div className="add-Todo__displayInputContainer">
           <button
             className="add-Todo__taskBtn"
             onClick={() => setIsInputDisplayed(true)}

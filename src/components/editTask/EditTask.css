@@ -1,16 +1,28 @@
 .editInput {
-  height: 19px;
+  font-size: 13px;
 }
 
 form button {
   margin-left: 1px;
   width: object-fit;
   cursor: pointer;
+  margin-right: 0 0.5em;
 }
 
 form button:hover {
-  margin-left: 1px;
   width: object-fit;
   cursor: pointer;
   opacity: 0.7;
+}
+
+@media (max-width: 450px) {
+  .editInput {
+    font-size: 16px;
+  }
+
+  .editTask__formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

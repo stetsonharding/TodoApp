@@ -25,7 +25,10 @@ export default function EditTask(props) {
 
   return (
     <>
-      <form onSubmit={(e) => submitEdit(e, task.id, editedTask)}>
+      <form
+        className="editTask__formContainer"
+        onSubmit={(e) => submitEdit(e, task.id, editedTask)}
+      >
         <input
           className="editTask_ editInput"
           type="text"

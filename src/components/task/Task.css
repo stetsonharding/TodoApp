@@ -23,6 +23,8 @@
   font-size: 17px;
   color: black;
   font-weight: bold;
+  max-width: 260px;
+  padding: 0 15px;
 }
 
 .task__buttons-container {
@@ -33,8 +35,17 @@
   padding-right: 16px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .task__container {
+    flex-direction: column;
+  }
+
+  .task__buttons-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    padding-right: 16px;
+    margin: 10px 0;
   }
 }
